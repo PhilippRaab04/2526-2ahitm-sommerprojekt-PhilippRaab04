@@ -11,10 +11,106 @@ body {
 }
 
 .game-page {
+    position: relative;
     width: 100%;
     height: 100vh;
     background-image: url("../media/game.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+#player {
+    position: absolute;
+    left: 10rem;
+    top: 32rem;
+    width: 8rem;
+    height: auto;
+    user-select: none;
+    -webkit-user-drag: none;
+    pointer-events: none;
+    transform: scaleX(1);
+    transform-origin: center;
+}
+.interaction-box {
+    position: absolute;
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 1rem 1.4rem;
+    min-width: 11rem;
+    min-height: 4.2rem;
+
+    font-family: "magical-world", serif;
+    font-size: 1.8rem;
+    color: #fff8ef;
+    text-align: center;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: rgba(95, 48, 14, 0.52);
+    backdrop-filter: blur(0.25rem);
+    -webkit-backdrop-filter: blur(0.25rem);
+
+    box-shadow:
+        inset 0 0 0.4rem rgba(255, 210, 140, 0.18),
+        0 0.35rem 0 rgba(74, 34, 10, 0.85),
+        0 0.7rem 1.2rem rgba(0, 0, 0, 0.3);
+
+    text-shadow:
+        0 0 0.25rem rgba(0, 0, 0, 0.8),
+        0.08rem 0.08rem 0 rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    animation: interactionBoxFade 0.8s ease-out forwards;
+}
+
+.interaction-box-items {
+    top: 6.5rem;
+    left: 17.5rem;
+    width: 12rem;
+}
+
+.interaction-box-battle {
+    top: 18.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18rem;
+    min-height: 4.8rem;
+    font-size: 2rem;
+}
+
+.interaction-box-rewards {
+    top: 6.5rem;
+    right: 17.5rem;
+    width: 13rem;
+}
+
+@keyframes interactionBoxFade {
+    from {
+        opacity: 0;
+        transform: translateY(-0.8rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.interaction-box-battle.interaction-box {
+    animation: interactionBoxBattleFade 0.9s ease-out forwards;
+}
+
+@keyframes interactionBoxBattleFade {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-0.8rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
 }

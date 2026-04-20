@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Dungeon - Entrance</title>
     <link rel="stylesheet" href="../style/entrancestyle.css">
+    <script src="../script/entrancescript.js" defer></script>
+    <script src="../script/entranceleaderboardscript.js" defer></script>
 </head>
 
 <body>
@@ -24,15 +26,92 @@
 
             <div class="top-buttons">
                 <a href="./game.html" class="menu-button large-button">Start Game</a>
-                <button class="menu-button large-button" type="button">Settings</button>
+                <button class="menu-button large-button" id="open-settings-button" type="button">Settings</button>
             </div>
 
             <div class="bottom-buttons">
-                <button class="menu-button small-button" type="button">Tutorial</button>
-                <button class="menu-button small-button" type="button">Leaderboard</button>
+                <button class="menu-button small-button" id="open-tutorial-button" type="button">Tutorial</button>
+                <button class="menu-button small-button" id="open-leaderboard-button" type="button">Leaderboard</button>
             </div>
         </section>
     </main>
+
+    <div class="settings-overlay hidden" id="settings-overlay">
+        <section class="settings-window">
+            <button class="close-settings-button" id="close-settings-button" type="button">X</button>
+
+            <h2 class="settings-title">Settings</h2>
+
+            <div class="settings-content">
+                <div class="settings-row">
+                    <span class="settings-label">Music</span>
+                    <button class="settings-toggle-button" id="music-toggle-button" type="button">Off</button>
+                </div>
+
+                <div class="settings-row volume-row">
+                    <label class="settings-label" for="volume-slider">Volume</label>
+                    <input type="range" id="volume-slider" min="0" max="100" value="50">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="tutorial-overlay hidden" id="tutorial-overlay">
+        <section class="tutorial-window">
+            <button class="close-tutorial-button" id="close-tutorial-button" type="button">X</button>
+
+            <h2 class="tutorial-title">Tutorial</h2>
+
+            <div class="tutorial-content">
+                <p>
+                    In Quiz Dungeon durchläufst du einen linearen Dungeon voller Wissensfragen.
+                    Jede Ebene hat ein eigenes Thema und wird von einem Boss bewacht.
+                </p>
+
+                <p>
+                    Dein Ziel ist es, alle Bossgegner zu besiegen und am Ende den
+                    Schatzraum des Wissens zu erreichen.
+                </p>
+
+                <p>
+                    Bei richtigen Antworten verliert der Boss Lebenspunkte.
+                    Bei falschen Antworten verlierst du Lebenspunkte und der Boss greift an.
+                </p>
+
+                <p>
+                    Im Spiel kannst du außerdem Items einsetzen, um dir im Kampf
+                    Vorteile zu verschaffen.
+                </p>
+
+                <p>
+                    Nur mit Wissen, Taktik und den richtigen Entscheidungen kannst du
+                    den Dungeon erfolgreich bezwingen.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="leaderboard-overlay hidden" id="leaderboard-overlay">
+        <section class="leaderboard-window">
+            <button class="close-leaderboard-button" id="close-leaderboard-button" type="button">X</button>
+
+            <h2 class="leaderboard-title">Leaderboard</h2>
+
+            <div class="leaderboard-header">
+                <span>Rank</span>
+                <span>Name</span>
+                <span>Points</span>
+                <span>Time</span>
+                <span>Hearts Used</span>
+            </div>
+
+            <div class="leaderboard-list" id="leaderboard-list"></div>
+        </section>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="../media/music/music.mp3" type="audio/mpeg">
+    </audio>
 </body>
 
 </html>
