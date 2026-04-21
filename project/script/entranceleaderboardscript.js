@@ -45,7 +45,7 @@ function createDummyLeaderboardData() {
 function saveDummyDataIfEmpty() {
     const savedLeaderboard = localStorage.getItem(leaderboardStorageKey);
 
-    if (savedLeaderboard === null) {
+    if (savedLeaderboard == null) {
         const dummyData = createDummyLeaderboardData();
         localStorage.setItem(leaderboardStorageKey, JSON.stringify(dummyData));
     }
@@ -83,7 +83,6 @@ function createLeaderboardEntry(playerData, rank) {
     return leaderboardEntry;
 }
 
-/*Fremdcode*/
 
 function renderLeaderboard() {
     leaderboardList.innerHTML = "";
@@ -111,7 +110,7 @@ closeLeaderboardButton.addEventListener("click", function () {
 });
 
 leaderboardOverlay.addEventListener("click", function (event) {
-    if (event.target === leaderboardOverlay) {
+    if (event.target == leaderboardOverlay) {
         leaderboardOverlay.classList.add("hidden");
     }
 });
