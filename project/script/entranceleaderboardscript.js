@@ -40,6 +40,8 @@ function createDummyLeaderboardData() {
     ];
 }
 
+/*wird noch gelöscht*/
+
 function saveDummyDataIfEmpty() {
     const savedLeaderboard = localStorage.getItem(leaderboardStorageKey);
 
@@ -65,6 +67,7 @@ function sortLeaderboardData(leaderboardData) {
     });
 }
 
+
 function createLeaderboardEntry(playerData, rank) {
     const leaderboardEntry = document.createElement("div");
     leaderboardEntry.classList.add("leaderboard-entry");
@@ -80,6 +83,8 @@ function createLeaderboardEntry(playerData, rank) {
     return leaderboardEntry;
 }
 
+/*Fremdcode*/
+
 function renderLeaderboard() {
     leaderboardList.innerHTML = "";
 
@@ -92,6 +97,8 @@ function renderLeaderboard() {
     }
 }
 
+
+/*wird noch gelöscht*/
 saveDummyDataIfEmpty();
 
 openLeaderboardButton.addEventListener("click", function () {
