@@ -1,0 +1,237 @@
+/*bei literatur die fragen teils selbst bestimmt*/
+[
+    {
+        "id": 1,
+        "frage": "Wer schrieb den Roman „Die Verwandlung“?",
+        "antworten": [
+            "Franz Kafka",
+            "Fjodor Dostojewski",
+            "Osamu Dazai",
+            "Friedrich Nietzsche"
+        ],
+        "richtigeAntwort": 1,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 2,
+        "frage": "Wer schrieb „Schuld und Sühne“?",
+        "antworten": [
+            "Leo Tolstoi",
+            "Franz Kafka",
+            "Fjodor Dostojewski",
+            "Albert Camus"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 3,
+        "frage": "Welcher Autor schrieb „No Longer Human“?",
+        "antworten": [
+            "Yukio Mishima",
+            "Osamu Dazai",
+            "Haruki Murakami",
+            "Kenzaburo Oe"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 4,
+        "frage": "Welcher Philosoph schrieb „Also sprach Zarathustra“?",
+        "antworten": [
+            "Immanuel Kant",
+            "Arthur Schopenhauer",
+            "Friedrich Nietzsche",
+            "Georg Hegel"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 5,
+        "frage": "Franz Kafka schrieb hauptsächlich in welcher Sprache?",
+        "antworten": [
+            "Deutsch",
+            "Tschechisch",
+            "Russisch",
+            "Französisch"
+        ],
+        "richtigeAntwort": 1,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 6,
+        "frage": "Welches Werk gehört zu Dostojewski?",
+        "antworten": [
+            "Der Prozess",
+            "Die Brüder Karamasow",
+            "No Longer Human",
+            "Ecce Homo"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "leicht",
+        "thema": "literatur"
+    },
+    {
+        "id": 7,
+        "frage": "Wie heißt die Hauptfigur in Kafkas „Die Verwandlung“?",
+        "antworten": [
+            "Josef K.",
+            "Gregor Samsa",
+            "Raskolnikow",
+            "Mersault"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 8,
+        "frage": "Welche Figur steht im Mittelpunkt von „Schuld und Sühne“?",
+        "antworten": [
+            "Iwan Karamasow",
+            "Gregor Samsa",
+            "Raskolnikow",
+            "Zarathustra"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 9,
+        "frage": "„No Longer Human“ erschien ursprünglich in welcher Sprache?",
+        "antworten": [
+            "Chinesisch",
+            "Koreanisch",
+            "Japanisch",
+            "Deutsch"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 10,
+        "frage": "Welcher Begriff wird besonders oft mit Kafka in Verbindung gebracht?",
+        "antworten": [
+            "Romantisch",
+            "Kafkaesk",
+            "Klassizistisch",
+            "Barock"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 11,
+        "frage": "Welches Werk schrieb Nietzsche ebenfalls?",
+        "antworten": [
+            "Jenseits von Gut und Böse",
+            "Der Spieler",
+            "Die Verwandlung",
+            "Der Idiot"
+        ],
+        "richtigeAntwort": 1,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 12,
+        "frage": "Zu welcher Gattung gehört „Die Verwandlung“ am ehesten?",
+        "antworten": [
+            "Drama",
+            "Kurzroman bzw. Erzählung",
+            "Epos",
+            "Sachbuch"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "mittel",
+        "thema": "literatur"
+    },
+    {
+        "id": 13,
+        "frage": "Wie heißt Kafkas unvollendeter Roman über ein undurchschaubares Gerichtsverfahren?",
+        "antworten": [
+            "Das Schloss",
+            "Amerika",
+            "Der Prozess",
+            "Der Verschollene"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    },
+    {
+        "id": 14,
+        "frage": "Welches zentrale Motiv prägt viele Werke Dostojewskis besonders stark?",
+        "antworten": [
+            "Technischer Fortschritt",
+            "Moralische und religiöse Konflikte",
+            "Naturbeschreibung",
+            "Reiseabenteuer"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    },
+    {
+        "id": 15,
+        "frage": "Welcher Begriff ist eng mit Nietzsche verbunden?",
+        "antworten": [
+            "Tabula rasa",
+            "Übermensch",
+            "Mimesis",
+            "Katharsis"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    },
+    {
+        "id": 16,
+        "frage": "Welche Aussage passt am besten zu „No Longer Human“?",
+        "antworten": [
+            "Ein heiterer Abenteuerroman",
+            "Eine Darstellung von Entfremdung und Identitätskrise",
+            "Ein klassisches Ritterepos",
+            "Ein wissenschaftlicher Essay"
+        ],
+        "richtigeAntwort": 2,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    },
+    {
+        "id": 17,
+        "frage": "Welcher Autor stammt nicht aus dem deutschsprachigen Raum?",
+        "antworten": [
+            "Franz Kafka",
+            "Friedrich Nietzsche",
+            "Osamu Dazai",
+            "Thomas Mann"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    },
+    {
+        "id": 18,
+        "frage": "Welches Werk gehört nicht zu Dostojewski?",
+        "antworten": [
+            "Der Idiot",
+            "Die Brüder Karamasow",
+            "Der Prozess",
+            "Schuld und Sühne"
+        ],
+        "richtigeAntwort": 3,
+        "schwierigkeit": "schwer",
+        "thema": "literatur"
+    }
+]
