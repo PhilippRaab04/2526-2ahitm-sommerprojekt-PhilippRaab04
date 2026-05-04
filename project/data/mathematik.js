@@ -1,5 +1,4 @@
-/*Ich habe beim json eine vorlage geschrieben jeweils für einfach mittel und schwer und mir dann jeweils 5 weitere fragen generieren lassen, gilt auch für die anderen themenbereiche!!!*/
-[
+const mathematikFragen= [
     {
         "id": 1,
         "frage": "Wie viel ist 7 mal 8?",

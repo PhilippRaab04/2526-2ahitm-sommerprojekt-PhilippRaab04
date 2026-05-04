@@ -1,4 +1,4 @@
-[
+const naturwissenschaftenFragen= [
     {
         "id": 1,
         "frage": "Welcher Planet wird oft als roter Planet bezeichnet?",

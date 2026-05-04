@@ -1,4 +1,4 @@
-[
+const mathematikFragen = [
     {
         "id": 1,
         "frage": "In welchem Jahr begann der Erste Weltkrieg?",

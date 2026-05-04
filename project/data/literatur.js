@@ -1,5 +1,4 @@
-/*bei literatur die fragen teils selbst bestimmt*/
-[
+const literaturFragen = [
     {
         "id": 1,
         "frage": "Wer schrieb den Roman „Die Verwandlung“?",

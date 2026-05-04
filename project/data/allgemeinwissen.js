@@ -1,4 +1,4 @@
-[
+const allgemeinwissenFragen = [
     {
         "id": 1,
         "frage": "Wie heißt die Hauptstadt von Österreich?",
