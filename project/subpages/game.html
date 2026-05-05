@@ -1,16 +1,60 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Dungeon - Game</title>
-    <link rel="stylesheet" href="../style/gamestyle.css">
+
+    <link rel="stylesheet" href="../style/gamestyle/gamebase.css">
+    <link rel="stylesheet" href="../style/gamestyle/interactionboxes.css">
+    <link rel="stylesheet" href="../style/gamestyle/namepopup.css">
+    <link rel="stylesheet" href="../style/gamestyle/boss.css">
+    <link rel="stylesheet" href="../style/gamestyle/quiz.css">
+    <link rel="stylesheet" href="../style/gamestyle/hud.css">
+    <link rel="stylesheet" href="../style/gamestyle/endscreen.css">
+
+    <!-- AnimeJS Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <script src="../data/allgemeinwissen.js" defer></script>
+    <script src="../data/geschichte.js" defer></script>
+    <script src="../data/literatur.js" defer></script>
+    <script src="../data/mathematik.js" defer></script>
+    <script src="../data/naturwissenschaften.js" defer></script>
+
     <script src="../script/gamescript.js" defer></script>
     <script src="../script/interactiongame.js" defer></script>
+    <script src="../script/gamestartscript.js" defer></script>
+    <script src="../script/bossdatascript.js" defer></script>
+    <script src="../script/bossspawnscript.js" defer></script>
+    <script src="../script/quizrenderscript.js" defer></script>
+    <script src="../script/hudscript.js" defer></script>
+    <script src="../script/quizlogicscript.js" defer></script>
+    <script src="../script/gameendscript.js" defer></script>
 </head>
+
 <body>
     <main class="game-page">
         <img id="player" src="../media/sprite/1run.png" alt="Player Sprite">
+
+        <div class="name-popup-overlay hidden" id="name-popup-overlay">
+            <section class="name-popup-window">
+                <h2 class="name-popup-title">Enter your name</h2>
+
+                <p class="name-popup-text">
+                    Before you enter the dungeon, tell me your name.
+                </p>
+
+                <input type="text" id="player-name-input" class="player-name-input" maxlength="20"
+                    placeholder="Your name">
+
+                <button type="button" id="start-run-button" class="name-popup-button">
+                    Start Run
+                </button>
+            </section>
+        </div>
     </main>
 </body>
+
 </html>

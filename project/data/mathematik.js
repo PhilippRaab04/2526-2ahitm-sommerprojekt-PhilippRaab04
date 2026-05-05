@@ -1,4 +1,4 @@
-const mathematikFragen= [
+const mathematikFragen = [
     {
         "id": 1,
         "frage": "Wie viel ist 7 mal 8?",

@@ -1,38 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: #000;
-}
-
-.game-page {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background-image: url("../media/game.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-#player {
-    position: absolute;
-    left: 10rem;
-    top: 32rem;
-    width: 8rem;
-    height: auto;
-    user-select: none;
-    -webkit-user-drag: none;
-    pointer-events: none;
-    transform: scaleX(1);
-    transform-origin: center;
-}
 .interaction-box {
     position: absolute;
     z-index: 5;
@@ -84,28 +49,21 @@ body {
     width: 13rem;
 }
 
-@keyframes interactionBoxFade {
-    from {
-        opacity: 0;
-        transform: translateY(-0.8rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.interaction-box-next-boss {
+    top: 18.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18rem;
+    min-height: 4.8rem;
+    font-size: 2rem;
+    background: rgba(60, 20, 5, 0.72);
+    border-color: rgba(200, 100, 20, 0.9);
 }
 
 .interaction-box-battle.interaction-box {
     animation: interactionBoxBattleFade 0.9s ease-out forwards;
 }
 
-@keyframes interactionBoxBattleFade {
-    from {
-        opacity: 0;
-        transform: translateX(-50%) translateY(-0.8rem);
-    }
-    to {
-        opacity: 1;
-        transform: translateX(-50%) translateY(0);
-    }
+.interaction-box-next-boss.interaction-box {
+    animation: interactionBoxBattleFade 0.9s ease-out forwards;
 }

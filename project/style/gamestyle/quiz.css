@@ -1,0 +1,103 @@
+.quiz-container {
+    position: absolute;
+    left: 50%;
+    top: 30rem;
+    transform: translateX(-50%);
+    z-index: 9;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.quiz-question-box {
+    width: 42rem;
+    min-height: 6rem;
+    padding: 1rem 1.4rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "magical-world", serif;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    text-align: center;
+    color: #fff8ef;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: rgba(95, 48, 14, 0.72);
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+
+    box-shadow:
+        inset 0 0 0.35rem rgba(255, 210, 140, 0.16),
+        0 0.3rem 0 rgba(74, 34, 10, 0.85),
+        0 0.8rem 1.2rem rgba(0, 0, 0, 0.28);
+
+    text-shadow:
+        0 0 0.25rem rgba(0, 0, 0, 0.8),
+        0.08rem 0.08rem 0 rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    animation: quizFadeIn 0.5s ease-out forwards;
+}
+
+.quiz-answers-grid {
+    width: 44rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.quiz-answer-box {
+    min-height: 4.8rem;
+    padding: 0.9rem 1rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "magical-world", serif;
+    font-size: 1.35rem;
+    line-height: 1.15;
+    text-align: center;
+    color: #fff8ef;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: rgba(120, 62, 18, 0.72);
+    backdrop-filter: blur(0.18rem);
+    -webkit-backdrop-filter: blur(0.18rem);
+
+    box-shadow:
+        inset 0 0 0.35rem rgba(255, 210, 140, 0.14),
+        0 0.28rem 0 rgba(74, 34, 10, 0.85),
+        0 0.75rem 1rem rgba(0, 0, 0, 0.24);
+
+    text-shadow:
+        0 0 0.22rem rgba(0, 0, 0, 0.8),
+        0.08rem 0.08rem 0 rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    animation: quizFadeIn 0.5s ease-out forwards;
+}
+
+.quiz-answer-box-1 { animation-delay: 0.08s; }
+.quiz-answer-box-2 { animation-delay: 0.16s; }
+.quiz-answer-box-3 { animation-delay: 0.24s; }
+.quiz-answer-box-4 { animation-delay: 0.32s; }
+
+.quiz-answer-box-active {
+    outline: 0.18rem solid rgba(255, 232, 180, 0.95);
+    outline-offset: 0.1rem;
+}
+
+.quiz-answer-box-correct {
+    background: rgba(70, 140, 60, 0.82);
+}
+
+.quiz-answer-box-wrong {
+    background: rgba(155, 55, 45, 0.82);
+}
