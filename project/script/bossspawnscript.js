@@ -70,6 +70,7 @@ function spawnBossByIndex(bossIndex) {
         delay: 300,
         easing: "easeOutQuad"
     });
+    
 
     setTimeout(function () {
         const bossLineBox = currentBossContainer.querySelector(".boss-line-box");
