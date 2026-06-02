@@ -1,3 +1,8 @@
+const musicPopupOverlay = document.getElementById("music-popup-overlay");
+const musicPopupYesButton = document.getElementById("music-popup-yes-button");
+const musicPopupNoButton = document.getElementById("music-popup-no-button");
+const backgroundMusic = document.getElementById("background-music");
+
 const namePopupOverlay = document.getElementById("name-popup-overlay");
 const playerNameInput = document.getElementById("player-name-input");
 const startRunButton = document.getElementById("start-run-button");
@@ -6,6 +11,24 @@ const playerElementForStart = document.getElementById("player");
 let currentPlayerName = "";
 let runHasStarted = false;
 let startTriggerActive = false;
+let musicChoiceFinished = false;
+
+window.gameMusicEnabled = false;
+
+function finishMusicChoice(enableMusic) {
+    window.gameMusicEnabled = enableMusic;
+    musicChoiceFinished = true;
+
+    if (enableMusic) {
+        backgroundMusic.volume = 0.2;
+        backgroundMusic.play().catch(function () {});
+    } else {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+
+    musicPopupOverlay.classList.add("hidden");
+}
 
 function getStartBattleBox() {
     return document.querySelector(".interaction-box-battle");
@@ -32,6 +55,10 @@ function isPlayerCollidingWithStartBattle() {
 
 function openNamePopup() {
     if (runHasStarted) {
+        return;
+    }
+
+    if (musicChoiceFinished == false) {
         return;
     }
 
@@ -70,6 +97,10 @@ function checkStartBattleCollision() {
         return;
     }
 
+    if (musicChoiceFinished == false) {
+        return;
+    }
+
     const isColliding = isPlayerCollidingWithStartBattle();
 
     if (isColliding && startTriggerActive == false) {
@@ -81,6 +112,14 @@ function checkStartBattleCollision() {
         startTriggerActive = false;
     }
 }
+
+musicPopupYesButton.addEventListener("click", function () {
+    finishMusicChoice(true);
+});
+
+musicPopupNoButton.addEventListener("click", function () {
+    finishMusicChoice(false);
+});
 
 startRunButton.addEventListener("click", function () {
     startRun();

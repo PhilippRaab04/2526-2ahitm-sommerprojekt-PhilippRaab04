@@ -1,5 +1,44 @@
 const leaderboardKey = "quizDungeonLeaderboard";
 
+const backgroundMusic = document.getElementById("background-music");
+const victorySound = document.getElementById("victory-sound");
+const defeatSound = document.getElementById("defeat-sound");
+
+function stopAllGameAudio() {
+    if (backgroundMusic) {
+        backgroundMusic.pause();
+        backgroundMusic.currentTime = 0;
+    }
+
+    if (victorySound) {
+        victorySound.pause();
+        victorySound.currentTime = 0;
+    }
+
+    if (defeatSound) {
+        defeatSound.pause();
+        defeatSound.currentTime = 0;
+    }
+}
+
+function playVictorySound() {
+    if (!victorySound) {
+        return;
+    }
+
+    stopAllGameAudio();
+    victorySound.play().catch(function () {});
+}
+
+function playDefeatSound() {
+    if (!defeatSound) {
+        return;
+    }
+
+    stopAllGameAudio();
+    defeatSound.play().catch(function () {});
+}
+
 function saveToLeaderboard() {
     const name = sessionStorage.getItem("quizDungeonCurrentPlayerName") || "Unknown";
     const points = Number(sessionStorage.getItem("quizDungeonCurrentPoints")) || 0;
@@ -59,6 +98,7 @@ function showWinScreen() {
     stopTimer();
     removeGameUI();
     saveToLeaderboard();
+    playVictorySound();
 
     const points = sessionStorage.getItem("quizDungeonCurrentPoints") || "0";
     const timeSeconds = Number(sessionStorage.getItem("quizDungeonCurrentTime")) || 0;
@@ -96,6 +136,7 @@ function showGameOverScreen() {
     stopTimer();
     removeGameUI();
     saveToLeaderboard();
+    playDefeatSound();
 
     const points = sessionStorage.getItem("quizDungeonCurrentPoints") || "0";
     const timeSeconds = Number(sessionStorage.getItem("quizDungeonCurrentTime")) || 0;

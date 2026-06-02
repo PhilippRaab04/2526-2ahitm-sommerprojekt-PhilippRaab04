@@ -16,6 +16,8 @@ const itemDefinitions = {
     }
 };
 
+const pickupSound = document.getElementById("pickup-sound");
+
 window.itemInventory = {
     fiftyFifty: 0,
     extraLife: 0,
@@ -33,6 +35,15 @@ let rewardsPopupContent = null;
 
 let itemsCollisionActive = false;
 let rewardsCollisionActive = false;
+
+function playPickupSound() {
+    if (!pickupSound) {
+        return;
+    }
+
+    pickupSound.currentTime = 0;
+    pickupSound.play().catch(function () {});
+}
 
 function createPopupButton(text, className) {
     const button = document.createElement("button");
@@ -322,6 +333,8 @@ function useInventoryItem(itemKey) {
             return;
         }
     }
+
+    playPickupSound();
 
     window.itemInventory[itemKey]--;
     updateInteractionBoxLabels();
