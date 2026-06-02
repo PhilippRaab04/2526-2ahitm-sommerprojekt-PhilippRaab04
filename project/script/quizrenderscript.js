@@ -3,6 +3,8 @@ const gamePageForQuiz = document.querySelector(".game-page");
 let currentQuizContainer = null;
 let currentRenderedQuestion = null;
 
+let fiftyFiftyAlreadyUsedForCurrentQuestion = false;
+
 function getRandomQuestionByDifficulty(fragenArray, schwierigkeit, usedQuestionIds) {
     const passendeFragen = [];
 
@@ -14,7 +16,7 @@ function getRandomQuestionByDifficulty(fragenArray, schwierigkeit, usedQuestionI
         }
     }
 
-    if (passendeFragen.length === 0) {
+    if (passendeFragen.length == 0) {
         return null;
     }
 
@@ -65,17 +67,83 @@ function renderQuestionForBossAndDifficulty(boss, schwierigkeit, usedQuestionIds
 
     const frage = getRandomQuestionByDifficulty(boss.fragen, schwierigkeit, usedQuestionIds);
 
-    if (!frage) {
+    if (frage === null) {
         return null;
     }
 
     currentRenderedQuestion = frage;
     currentQuizContainer = createQuizContainer(frage);
+    fiftyFiftyAlreadyUsedForCurrentQuestion = false;
+
     gamePageForQuiz.appendChild(currentQuizContainer);
 
     return frage;
 }
 
+function isQuestionCurrentlyActive() {
+    return currentQuizContainer != null && currentRenderedQuestion !== null;
+}
+
+function hideTwoWrongAnswersForCurrentQuestion() {
+    if (!isQuestionCurrentlyActive()) {
+        return false;
+    }
+
+    if (fiftyFiftyAlreadyUsedForCurrentQuestion) {
+        return false;
+    }
+
+    const answerBoxes = currentQuizContainer.querySelectorAll(".quiz-answer-box");
+    const wrongAnswerBoxes = [];
+
+    for (let i = 0; i < answerBoxes.length; i++) {
+        const answerIndex = Number(answerBoxes[i].dataset.answerIndex);
+
+        if (answerIndex != currentRenderedQuestion.richtigeAntwort) {
+            wrongAnswerBoxes.push(answerBoxes[i]);
+        }
+    }
+
+    if (wrongAnswerBoxes.length < 2) {
+        return false;
+    }
+
+    wrongAnswerBoxes.sort(function () {
+        return Math.random() - 0.5;
+    });
+
+    wrongAnswerBoxes[0].classList.add("quiz-answer-box-hidden");
+    wrongAnswerBoxes[1].classList.add("quiz-answer-box-hidden");
+
+    fiftyFiftyAlreadyUsedForCurrentQuestion = true;
+    return true;
+}
+
+function clearCurrentQuestion() {
+    if (currentQuizContainer) {
+        currentQuizContainer.remove();
+        currentQuizContainer = null;
+    }
+
+    currentRenderedQuestion = null;
+    fiftyFiftyAlreadyUsedForCurrentQuestion = false;
+}
+
+window.isQuestionCurrentlyActive = isQuestionCurrentlyActive;
+window.hideTwoWrongAnswersForCurrentQuestion = hideTwoWrongAnswersForCurrentQuestion;
+
 document.addEventListener("bossIntroFinished", function (event) {
     renderQuestionForBossAndDifficulty(event.detail.boss, "leicht", []);
+});
+
+document.addEventListener("bossDefeated", function () {
+    clearCurrentQuestion();
+});
+
+document.addEventListener("gameOver", function () {
+    clearCurrentQuestion();
+});
+
+document.addEventListener("allBossesDefeated", function () {
+    clearCurrentQuestion();
 });

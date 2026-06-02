@@ -1,7 +1,7 @@
-const difficultyOrder = ["leicht", "mittel", "schwer"];
+const questionPlan = ["leicht", "leicht", "mittel", "mittel", "schwer", "schwer"];
 
 let currentBossData = null;
-let currentDifficultyIndex = 0;
+let currentQuestionPlanIndex = 0;
 let usedQuestionIdsForCurrentBoss = [];
 let answerCooldown = false;
 
@@ -31,6 +31,19 @@ function getPointsLossForWrongAnswer(schwierigkeit) {
     return 0;
 }
 
+function dispatchQuestionAnswered(correctValue) {
+    if (!currentRenderedQuestion) {
+        return;
+    }
+
+    document.dispatchEvent(new CustomEvent("questionAnswered", {
+        detail: {
+            difficulty: currentRenderedQuestion.schwierigkeit,
+            correct: correctValue
+        }
+    }));
+}
+
 function highlightHoveredAnswer() {
     const answerBoxes = document.querySelectorAll(".quiz-answer-box");
 
@@ -56,6 +69,10 @@ function getCollidedAnswerBox() {
     const answerBoxes = document.querySelectorAll(".quiz-answer-box");
 
     for (let i = 0; i < answerBoxes.length; i++) {
+        if (answerBoxes[i].classList.contains("quiz-answer-box-hidden")) {
+            continue;
+        }
+
         const answerRect = answerBoxes[i].getBoundingClientRect();
 
         const isColliding =
@@ -73,9 +90,9 @@ function getCollidedAnswerBox() {
 }
 
 function loadNextQuestionOrFinishBoss() {
-    currentDifficultyIndex++;
+    currentQuestionPlanIndex++;
 
-    if (currentDifficultyIndex >= difficultyOrder.length) {
+    if (currentQuestionPlanIndex >= questionPlan.length) {
         document.dispatchEvent(new CustomEvent("bossDefeated", {
             detail: {
                 boss: currentBossData
@@ -84,7 +101,8 @@ function loadNextQuestionOrFinishBoss() {
         return;
     }
 
-    const nextDifficulty = difficultyOrder[currentDifficultyIndex];
+    const nextDifficulty = questionPlan[currentQuestionPlanIndex];
+
     const nextQuestion = renderQuestionForBossAndDifficulty(
         currentBossData,
         nextDifficulty,
@@ -103,6 +121,7 @@ function handleCorrectAnswer(answerBox) {
     updateHudPoints();
 
     sessionStorage.setItem("quizDungeonCurrentPoints", String(window.currentPoints));
+    dispatchQuestionAnswered(true);
 
     setTimeout(function () {
         loadNextQuestionOrFinishBoss();
@@ -130,6 +149,7 @@ function handleWrongAnswer(answerBox) {
 
     sessionStorage.setItem("quizDungeonCurrentPoints", String(window.currentPoints));
     sessionStorage.setItem("quizDungeonCurrentHearts", String(window.currentHearts));
+    dispatchQuestionAnswered(false);
 
     setTimeout(function () {
         if (window.currentHearts <= 0) {
@@ -170,9 +190,36 @@ function checkAnswerCollision() {
     }
 }
 
+function rerollCurrentQuestionForCurrentBoss() {
+    if (answerCooldown) {
+        return false;
+    }
+
+    if (!currentBossData || !currentRenderedQuestion) {
+        return false;
+    }
+
+    const currentDifficulty = currentRenderedQuestion.schwierigkeit;
+
+    const rerolledQuestion = renderQuestionForBossAndDifficulty(
+        currentBossData,
+        currentDifficulty,
+        usedQuestionIdsForCurrentBoss
+    );
+
+    if (!rerolledQuestion) {
+        return false;
+    }
+
+    usedQuestionIdsForCurrentBoss.push(rerolledQuestion.id);
+    return true;
+}
+
+window.rerollCurrentQuestionForCurrentBoss = rerollCurrentQuestionForCurrentBoss;
+
 document.addEventListener("bossIntroFinished", function (event) {
     currentBossData = event.detail.boss;
-    currentDifficultyIndex = 0;
+    currentQuestionPlanIndex = 0;
     usedQuestionIdsForCurrentBoss = [];
 
     const firstQuestion = currentRenderedQuestion;

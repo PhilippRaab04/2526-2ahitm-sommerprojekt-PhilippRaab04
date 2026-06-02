@@ -1,240 +1,316 @@
 const geschichteFragen = [
     {
-        "id": 1,
-        "frage": "In welchem Jahr begann der Erste Weltkrieg?",
-        "antworten": [
-            "1916",
-            "1914",
-            "1918",
-            "1912"
+        id: 1,
+        frage: "Who was the first President of the United States?",
+        antworten: [
+            "Thomas Jefferson",
+            "George Washington",
+            "Abraham Lincoln",
+            "John Adams"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
     },
     {
-        "id": 2,
-        "frage": "Wer war der erste Kaiser des Römischen Reiches?",
-        "antworten": [
-            "Augustus",
+        id: 2,
+        frage: "Which ancient civilization built the pyramids?",
+        antworten: [
+            "Romans",
+            "Greeks",
+            "Egyptians",
+            "Mayans"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 3,
+        frage: "In which country did the Renaissance begin?",
+        antworten: [
+            "France",
+            "Italy",
+            "England",
+            "Spain"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 4,
+        frage: "Which wall divided Berlin for many years?",
+        antworten: [
+            "The Roman Wall",
+            "The Berlin Wall",
+            "The Iron Wall",
+            "The East Wall"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 5,
+        frage: "Who discovered America in 1492, according to traditional European history?",
+        antworten: [
+            "Vasco da Gama",
+            "Ferdinand Magellan",
+            "Christopher Columbus",
+            "Marco Polo"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 6,
+        frage: "Which ship famously sank in 1912 after hitting an iceberg?",
+        antworten: [
+            "Britannic",
+            "Titanic",
+            "Lusitania",
+            "Victory"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 7,
+        frage: "Which war was fought between the North and South regions of the United States?",
+        antworten: [
+            "World War I",
+            "The Civil War",
+            "The Cold War",
+            "The Crimean War"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+    {
+        id: 8,
+        frage: "Who was known as the queen of ancient Egypt and had a famous relationship with Julius Caesar and Mark Antony?",
+        antworten: [
+            "Nefertiti",
+            "Hatshepsut",
+            "Cleopatra",
+            "Joan of Arc"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "geschichte"
+    },
+
+    {
+        id: 9,
+        frage: "In which year did World War II end in Europe?",
+        antworten: [
+            "1943",
+            "1944",
+            "1945",
+            "1946"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 10,
+        frage: "Which empire was ruled by Julius Caesar?",
+        antworten: [
+            "Ottoman Empire",
+            "Roman Republic",
+            "British Empire",
+            "Byzantine Empire"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 11,
+        frage: "What was the name of the trade route connecting Europe and Asia in ancient times?",
+        antworten: [
+            "Spice Road",
+            "Royal Path",
+            "Silk Road",
+            "Golden Way"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 12,
+        frage: "Which revolution began in France in 1789?",
+        antworten: [
+            "Industrial Revolution",
+            "French Revolution",
+            "Russian Revolution",
+            "Glorious Revolution"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 13,
+        frage: "Who was the Soviet leader during most of World War II?",
+        antworten: [
+            "Lenin",
+            "Stalin",
+            "Trotsky",
+            "Khrushchev"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 14,
+        frage: "Which country was ruled by the pharaohs?",
+        antworten: [
+            "Persia",
+            "Greece",
+            "Egypt",
+            "Rome"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 15,
+        frage: "Which event is commonly seen as the start of World War I?",
+        antworten: [
+            "The sinking of the Titanic",
+            "The assassination of Archduke Franz Ferdinand",
+            "The invasion of Poland",
+            "The Russian Revolution"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+    {
+        id: 16,
+        frage: "Which document signed in 1215 limited the power of the English king?",
+        antworten: [
+            "The Bill of Rights",
+            "The Magna Carta",
+            "The Declaration of Independence",
+            "The Treaty of Versailles"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "geschichte"
+    },
+
+    {
+        id: 17,
+        frage: "Which treaty officially ended World War I?",
+        antworten: [
+            "Treaty of Paris",
+            "Treaty of Vienna",
+            "Treaty of Versailles",
+            "Treaty of Rome"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
+    },
+    {
+        id: 18,
+        frage: "Who was the first emperor of Rome?",
+        antworten: [
             "Nero",
-            "Caesar",
+            "Augustus",
+            "Julius Caesar",
             "Trajan"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 3,
-        "frage": "Welche Mauer fiel im Jahr 1989?",
-        "antworten": [
-            "Hadrianswall",
-            "Berliner Mauer",
-            "Chinesische Mauer",
-            "Westwall"
+        id: 19,
+        frage: "Which civilization is known for creating democracy in Athens?",
+        antworten: [
+            "Romans",
+            "Greeks",
+            "Phoenicians",
+            "Persians"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 4,
-        "frage": "In welchem Land begann die Französische Revolution?",
-        "antworten": [
-            "Frankreich",
-            "Italien",
-            "Deutschland",
-            "Spanien"
+        id: 20,
+        frage: "In which year did the Berlin Wall fall?",
+        antworten: [
+            "1987",
+            "1988",
+            "1989",
+            "1991"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 5,
-        "frage": "Wer entdeckte Amerika im Jahr 1492 aus europäischer Sicht?",
-        "antworten": [
-            "Ferdinand Magellan",
-            "Vasco da Gama",
-            "Christoph Kolumbus",
-            "James Cook"
+        id: 21,
+        frage: "Which ancient city was destroyed by Mount Vesuvius in 79 AD?",
+        antworten: [
+            "Athens",
+            "Carthage",
+            "Pompeii",
+            "Sparta"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 6,
-        "frage": "Wie hieß der Konflikt zwischen Nord- und Südstaaten in den USA?",
-        "antworten": [
-            "Unabhängigkeitskrieg",
-            "Bürgerkrieg",
-            "Siebenjähriger Krieg",
-            "Kalter Krieg"
+        id: 22,
+        frage: "Who led the Mongol Empire to become the largest contiguous land empire in history?",
+        antworten: [
+            "Attila",
+            "Genghis Khan",
+            "Kublai Khan",
+            "Tamerlane"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "leicht",
-        "thema": "geschichte"
-    },
-
-
-    {
-        "id": 7,
-        "frage": "Welche Stadt wurde im Altertum durch ein hölzernes Pferd erobert?",
-        "antworten": [
-            "Athen",
-            "Sparta",
-            "Troja",
-            "Rom"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 8,
-        "frage": "Welcher österreichische Thronfolger wurde 1914 in Sarajevo ermordet?",
-        "antworten": [
-            "Franz Joseph",
-            "Franz Ferdinand",
-            "Karl I.",
-            "Maximilian I."
+        id: 23,
+        frage: "Which war was fought between Athens and Sparta?",
+        antworten: [
+            "Punic War",
+            "Peloponnesian War",
+            "Trojan War",
+            "Persian War"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     },
     {
-        "id": 9,
-        "frage": "Wie hieß die Epoche, die direkt auf das Mittelalter folgte?",
-        "antworten": [
-            "Antike",
-            "Aufklärung",
-            "Renaissance",
-            "Barock"
+        id: 24,
+        frage: "Which dynasty built much of the Great Wall of China as seen today?",
+        antworten: [
+            "Han Dynasty",
+            "Tang Dynasty",
+            "Ming Dynasty",
+            "Qing Dynasty"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
-    },
-    {
-        "id": 10,
-        "frage": "Wer war Königin von Ägypten und ist besonders durch ihre Verbindung zu Rom bekannt?",
-        "antworten": [
-            "Nofretete",
-            "Hatchepsut",
-            "Kleopatra",
-            "Semiramis"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
-    },
-    {
-        "id": 11,
-        "frage": "Welches Reich bestand in Konstantinopel noch lange nach dem Untergang Westroms weiter?",
-        "antworten": [
-            "Heiliges Römisches Reich",
-            "Osmanisches Reich",
-            "Byzantinisches Reich",
-            "Persisches Reich"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
-    },
-    {
-        "id": 12,
-        "frage": "Welcher Vertrag beendete 1919 offiziell den Ersten Weltkrieg für Deutschland?",
-        "antworten": [
-            "Vertrag von Wien",
-            "Vertrag von Paris",
-            "Vertrag von Versailles",
-            "Vertrag von Rom"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "geschichte"
-    },
-    
-
-    {
-        "id": 13,
-        "frage": "Welche beiden Supermächte standen sich im Kalten Krieg hauptsächlich gegenüber?",
-        "antworten": [
-            "USA und Sowjetunion",
-            "Deutschland und Frankreich",
-            "China und Japan",
-            "England und Spanien"
-        ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
-    },
-    {
-        "id": 14,
-        "frage": "Welche Schlacht im Jahr 1815 beendete endgültig Napoleons Herrschaft?",
-        "antworten": [
-            "Leipzig",
-            "Austerlitz",
-            "Waterloo",
-            "Sedan"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
-    },
-    {
-        "id": 15,
-        "frage": "Welche Reformbewegung im 16. Jahrhundert ist eng mit Martin Luther verbunden?",
-        "antworten": [
-            "Gegenreformation",
-            "Humanismus",
-            "Reformation",
-            "Aufklärung"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
-    },
-    {
-        "id": 16,
-        "frage": "Wie hieß der Seeweg, über den europäische Mächte im 15. und 16. Jahrhundert Handelsrouten nach Indien suchten?",
-        "antworten": [
-            "Nordwestpassage",
-            "Seidenstraße",
-            "Kaproute",
-            "Bernsteinstraße"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
-    },
-    {
-        "id": 17,
-        "frage": "Welche Revolution begann 1917 in Russland und führte zur Machtübernahme der Bolschewiki?",
-        "antworten": [
-            "Februarrevolution",
-            "Oktoberrevolution",
-            "Julirevolution",
-            "Dezemberrevolution"
-        ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
-    },
-    {
-        "id": 18,
-        "frage": "Wie nennt man die Wiedergeburt der Künste und Wissenschaften in Europa zwischen Mittelalter und Neuzeit?",
-        "antworten": [
-            "Barock",
-            "Gotik",
-            "Renaissance",
-            "Romantik"
-        ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "geschichte"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "geschichte"
     }
-]
+];

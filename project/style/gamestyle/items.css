@@ -1,0 +1,224 @@
+.quiz-answer-box-hidden {
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+}
+
+.interaction-box-rewards-ready {
+    border-color: rgba(255, 196, 70, 0.95);
+    box-shadow:
+        0 0 1rem rgba(255, 196, 70, 0.45),
+        inset 0 0 0.35rem rgba(255, 210, 140, 0.16),
+        0 0.3rem 0 rgba(74, 34, 10, 0.85),
+        0 0.8rem 1.2rem rgba(0, 0, 0, 0.28);
+}
+
+.item-popup-overlay,
+.reward-popup-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 45;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(0.2rem);
+    -webkit-backdrop-filter: blur(0.2rem);
+}
+
+.item-popup-overlay.hidden,
+.reward-popup-overlay.hidden {
+    display: none;
+}
+
+.item-popup-window,
+.reward-popup-window {
+    position: relative;
+    width: 46rem;
+    min-height: 25rem;
+    padding: 2rem 2rem 2.3rem 2rem;
+
+    border: 0.18rem solid rgba(70, 30, 5, 0.95);
+    border-radius: 0.2rem;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(154, 88, 28, 0.96),
+        rgba(110, 57, 16, 0.97)
+    );
+
+    box-shadow:
+        inset 0 0 0.6rem rgba(255, 214, 153, 0.16),
+        0 0.5rem 0 rgba(74, 34, 10, 0.95),
+        0 1.2rem 2rem rgba(0, 0, 0, 0.45);
+}
+
+.item-popup-title,
+.reward-popup-title {
+    font-family: "magical-world", serif;
+    font-size: 3rem;
+    color: #fff6ea;
+    text-align: center;
+    margin-bottom: 1.4rem;
+
+    text-shadow:
+        0 0 0.25rem rgba(0, 0, 0, 0.85),
+        0.08rem 0.08rem 0 rgba(0, 0, 0, 0.35);
+}
+
+.item-popup-close,
+.reward-popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    width: 3.2rem;
+    height: 3.2rem;
+
+    font-family: "magical-world", serif;
+    font-size: 1.6rem;
+    color: #fff8ef;
+    cursor: pointer;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: linear-gradient(
+        to bottom,
+        rgba(170, 97, 28, 0.92),
+        rgba(128, 66, 18, 0.95)
+    );
+
+    box-shadow:
+        inset 0 0 0.4rem rgba(255, 210, 140, 0.22),
+        0 0.35rem 0 rgba(74, 34, 10, 0.95),
+        0 0.7rem 1.2rem rgba(0, 0, 0, 0.35);
+}
+
+.item-popup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.item-card {
+    padding: 1rem 0.9rem 1.1rem 0.9rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: rgba(95, 48, 14, 0.58);
+
+    box-shadow:
+        inset 0 0 0.35rem rgba(255, 210, 140, 0.14),
+        0 0.25rem 0 rgba(74, 34, 10, 0.85);
+}
+
+.item-card-image {
+    width: 5rem;
+    height: 5rem;
+    object-fit: contain;
+}
+
+.item-card-title {
+    font-family: "magical-world", serif;
+    font-size: 1.35rem;
+    color: #fff8ef;
+    text-align: center;
+}
+
+.item-card-description {
+    min-height: 3.4rem;
+
+    font-family: "magical-world", serif;
+    font-size: 0.95rem;
+    line-height: 1.15;
+    color: #ffe8c8;
+    text-align: center;
+}
+
+.item-card-count {
+    font-family: "magical-world", serif;
+    font-size: 1.1rem;
+    color: #fff8ef;
+}
+
+.item-card-button,
+.reward-claim-button {
+    width: 8rem;
+    min-height: 3rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: "magical-world", serif;
+    font-size: 1.2rem;
+    color: #fff8ef;
+    cursor: pointer;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: linear-gradient(
+        to bottom,
+        rgba(170, 97, 28, 0.92),
+        rgba(128, 66, 18, 0.95)
+    );
+
+    box-shadow:
+        inset 0 0 0.4rem rgba(255, 210, 140, 0.22),
+        0 0.25rem 0 rgba(74, 34, 10, 0.95);
+}
+
+.item-card-button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    filter: grayscale(0.35);
+}
+
+.reward-popup-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reward-preview {
+    width: 18rem;
+    padding: 1.2rem 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+
+    border: 0.15rem solid rgba(70, 30, 5, 0.85);
+    background: rgba(95, 48, 14, 0.58);
+
+    box-shadow:
+        inset 0 0 0.35rem rgba(255, 210, 140, 0.14),
+        0 0.25rem 0 rgba(74, 34, 10, 0.85);
+}
+
+.reward-preview-image {
+    width: 6rem;
+    height: 6rem;
+    object-fit: contain;
+}
+
+.reward-preview-title {
+    font-family: "magical-world", serif;
+    font-size: 1.5rem;
+    color: #fff8ef;
+    text-align: center;
+}
+
+.reward-preview-description,
+.reward-empty-text {
+    font-family: "magical-world", serif;
+    font-size: 1rem;
+    line-height: 1.2;
+    color: #ffe8c8;
+    text-align: center;
+}

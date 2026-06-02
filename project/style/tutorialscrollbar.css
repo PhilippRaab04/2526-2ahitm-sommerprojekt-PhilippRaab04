@@ -1,0 +1,26 @@
+.tutorial-window::-webkit-scrollbar {
+    width: 0.8rem;
+}
+
+.tutorial-window::-webkit-scrollbar-track {
+    background: rgba(60, 25, 8, 0.55);
+    border-radius: 0.2rem;
+}
+
+.tutorial-window::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        to bottom,
+        rgba(190, 125, 55, 0.95),
+        rgba(128, 66, 18, 0.95)
+    );
+    border: 0.08rem solid rgba(70, 30, 5, 0.85);
+    border-radius: 0.2rem;
+}
+
+.tutorial-window::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(
+        to bottom,
+        rgba(215, 150, 80, 0.98),
+        rgba(145, 78, 24, 0.98)
+    );
+}

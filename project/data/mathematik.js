@@ -1,236 +1,316 @@
 const mathematikFragen = [
     {
-        "id": 1,
-        "frage": "Wie viel ist 7 mal 8?",
-        "antworten": [
-            "54",
-            "58",
-            "56",
-            "64"
+        id: 1,
+        frage: "What is 7 + 5?",
+        antworten: [
+            "10",
+            "11",
+            "12",
+            "13"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 2,
-        "frage": "Wie viel ist 12 + 19?",
-        "antworten": [
-            "31",
-            "29",
-            "32",
+        id: 2,
+        frage: "What is 9 × 3?",
+        antworten: [
+            "27",
+            "21",
+            "24",
             "30"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
+        richtigeAntwort: 1,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 3,
-        "frage": "Wie lautet die Formel für die Fläche eines Rechtecks?",
-        "antworten": [
-            "a²",
-            "a · b",
-            "a + b",
-            "2a + 2b"
-        ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
-    },
-    {
-        "id": 4,
-        "frage": "Wie viel ist 144 geteilt durch 12?",
-        "antworten": [
-            "13",
-            "12",
-            "11",
+        id: 3,
+        frage: "What is 15 - 6?",
+        antworten: [
+            "7",
+            "8",
+            "9",
             "10"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 5,
-        "frage": "Wie viel Grad hat ein rechter Winkel?",
-        "antworten": [
-            "90",
-            "45",
-            "120",
-            "60"
+        id: 4,
+        frage: "What is 24 ÷ 6?",
+        antworten: [
+            "3",
+            "4",
+            "5",
+            "6"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 6,
-        "frage": "Wie viel ist 3²?",
-        "antworten": [
-            "12",
-            "8",
-            "6",
-            "9"
-        ],
-        "richtigeAntwort": 4,
-        "schwierigkeit": "leicht",
-        "thema": "mathematik"
-    },
-    {
-        "id": 7,
-        "frage": "Wie lautet die Lösung von 2x + 6 = 14?",
-        "antworten": [
-            "x = 4",
-            "x = 2",
-            "x = 5",
-            "x = 3"
-        ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
-    },
-    {
-        "id": 8,
-        "frage": "Wie viel ist 15 Prozent von 200?",
-        "antworten": [
-            "25",
-            "35",
+        id: 5,
+        frage: "What is the square of 5?",
+        antworten: [
+            "10",
             "20",
+            "25",
             "30"
         ],
-        "richtigeAntwort": 4,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 9,
-        "frage": "Wie lautet die Formel für den Umfang eines Kreises?",
-        "antworten": [
-            "U = a · b",
-            "U = 2a + 2b",
-            "U = 2 · π · r",
-            "U = π · r²"
+        id: 6,
+        frage: "How many sides does a triangle have?",
+        antworten: [
+            "3",
+            "4",
+            "5",
+            "6"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
+        richtigeAntwort: 1,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 10,
-        "frage": "Welche Zahl ist eine Primzahl?",
-        "antworten": [
-            "21",
-            "29",
-            "33",
-            "27"
-        ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
-    },
-    {
-        "id": 11,
-        "frage": "Wie viel ist 5³?",
-        "antworten": [
-            "25",
-            "125",
+        id: 7,
+        frage: "What is 50% of 20?",
+        antworten: [
+            "5",
+            "10",
             "15",
-            "75"
+            "20"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
     },
     {
-        "id": 12,
-        "frage": "Wie lautet die Lösung der Gleichung x² = 49?",
-        "antworten": [
-            "x = 14",
-            "x = 7",
-            "x = ±7",
-            "x = -7"
+        id: 8,
+        frage: "What is the next number in the sequence: 2, 4, 6, 8, ...?",
+        antworten: [
+            "9",
+            "10",
+            "12",
+            "14"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "mittel",
-        "thema": "mathematik"
+        richtigeAntwort: 2,
+        schwierigkeit: "leicht",
+        thema: "mathematik"
+    },
+
+    {
+        id: 9,
+        frage: "What is 12 × 8?",
+        antworten: [
+            "92",
+            "94",
+            "96",
+            "98"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
     },
     {
-        "id": 13,
-        "frage": "Wie lautet die Ableitung von x²?",
-        "antworten": [
-            "2x",
-            "x",
-            "2",
-            "x²"
+        id: 10,
+        frage: "What is the square root of 81?",
+        antworten: [
+            "7",
+            "8",
+            "9",
+            "10"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
     },
     {
-        "id": 14,
-        "frage": "Wie lautet die binomische Formel für (a + b)²?",
-        "antworten": [
-            "a² + b²",
-            "2a² + b²",
-            "a² - 2ab + b²",
-            "a² + 2ab + b²"
-        ],
-        "richtigeAntwort": 4,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
-    },
-    {
-        "id": 15,
-        "frage": "Wie viel ist die Wurzel aus 169?",
-        "antworten": [
+        id: 11,
+        frage: "If x = 4, what is 3x + 2?",
+        antworten: [
+            "10",
             "12",
             "14",
+            "16"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+    {
+        id: 12,
+        frage: "What is 25% of 80?",
+        antworten: [
+            "10",
+            "20",
+            "30",
+            "40"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+    {
+        id: 13,
+        frage: "How many degrees are in a right angle?",
+        antworten: [
+            "45",
+            "60",
+            "90",
+            "180"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+    {
+        id: 14,
+        frage: "What is the perimeter of a square with side length 6?",
+        antworten: [
+            "12",
+            "18",
+            "24",
+            "36"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+    {
+        id: 15,
+        frage: "What is 2³?",
+        antworten: [
+            "4",
+            "6",
+            "8",
+            "16"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+    {
+        id: 16,
+        frage: "If a rectangle is 5 units long and 3 units wide, what is its area?",
+        antworten: [
+            "8",
+            "12",
+            "15",
+            "18"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "mittel",
+        thema: "mathematik"
+    },
+
+    {
+        id: 17,
+        frage: "What is the value of π rounded to two decimal places?",
+        antworten: [
+            "3.12",
+            "3.14",
+            "3.16",
+            "3.18"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
+    },
+    {
+        id: 18,
+        frage: "Solve for x: 2x + 7 = 19",
+        antworten: [
+            "5",
+            "6",
+            "7",
+            "8"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
+    },
+    {
+        id: 19,
+        frage: "What is the area of a circle with radius 3? (Use π ≈ 3.14)",
+        antworten: [
+            "18.84",
+            "28.26",
+            "31.40",
+            "37.68"
+        ],
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
+    },
+    {
+        id: 20,
+        frage: "What is the next prime number after 11?",
+        antworten: [
+            "12",
             "13",
-            "11"
+            "15",
+            "17"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
+        richtigeAntwort: 2,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
     },
     {
-        "id": 16,
-        "frage": "Wie lautet die Steigung der Geraden y = 3x + 2?",
-        "antworten": [
-            "-2",
-            "2",
-            "3",
-            "-3"
+        id: 21,
+        frage: "If y = 2 and x = 5, what is xy + y?",
+        antworten: [
+            "10",
+            "11",
+            "12",
+            "14"
         ],
-        "richtigeAntwort": 3,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
     },
     {
-        "id": 17,
-        "frage": "Wie viel ist sin(90°)?",
-        "antworten": [
-            "1",
-            "-1",
-            "0,5",
-            "0"
+        id: 22,
+        frage: "What is 15²?",
+        antworten: [
+            "205",
+            "215",
+            "225",
+            "235"
         ],
-        "richtigeAntwort": 1,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
     },
     {
-        "id": 18,
-        "frage": "Wie lautet die Lösung von 3x - 5 = 16?",
-        "antworten": [
-            "x = 8",
-            "x = 7",
-            "x = 9",
-            "x = 6"
+        id: 23,
+        frage: "How many faces does a cube have?",
+        antworten: [
+            "4",
+            "5",
+            "6",
+            "8"
         ],
-        "richtigeAntwort": 2,
-        "schwierigkeit": "schwer",
-        "thema": "mathematik"
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
+    },
+    {
+        id: 24,
+        frage: "What is the result of 144 ÷ 12?",
+        antworten: [
+            "10",
+            "11",
+            "12",
+            "13"
+        ],
+        richtigeAntwort: 3,
+        schwierigkeit: "schwer",
+        thema: "mathematik"
     }
-]
+];
