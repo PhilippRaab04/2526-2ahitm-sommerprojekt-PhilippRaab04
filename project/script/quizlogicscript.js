@@ -199,9 +199,9 @@ function rerollCurrentQuestionForCurrentBoss() {
         return false;
     }
 
-    const currentDifficulty = currentRenderedQuestion.schwierigkeit;
+    let currentDifficulty = currentRenderedQuestion.schwierigkeit;
 
-    const rerolledQuestion = renderQuestionForBossAndDifficulty(
+    let rerolledQuestion = renderQuestionForBossAndDifficulty(
         currentBossData,
         currentDifficulty,
         usedQuestionIdsForCurrentBoss

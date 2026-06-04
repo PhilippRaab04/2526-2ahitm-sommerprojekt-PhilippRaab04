@@ -296,22 +296,13 @@ function useInventoryItem(itemKey) {
     }
 
     if (itemKey === "fiftyFifty") {
-        if (!window.isQuestionCurrentlyActive()) {
-            alert("You can only use this item while a question is active.");
-            return;
-        }
-
-        const success = window.hideTwoWrongAnswersForCurrentQuestion();
-
-        if (!success) {
-            alert("50:50 cannot be used right now.");
-            return;
+        if (window.isQuestionCurrentlyActive()) {
+            window.hideTwoWrongAnswersForCurrentQuestion();
         }
     }
 
     if (itemKey == "extraLife") {
         if (window.currentHearts >= 3) {
-            alert("You already have full hearts.");
             return;
         }
 
@@ -321,16 +312,8 @@ function useInventoryItem(itemKey) {
     }
 
     if (itemKey == "secondChance") {
-        if (!window.isQuestionCurrentlyActive()) {
-            alert("You can only use this item while a question is active.");
-            return;
-        }
-
-        const success = window.rerollCurrentQuestionForCurrentBoss();
-
-        if (!success) {
-            alert("No other question of this difficulty is available.");
-            return;
+        if (window.isQuestionCurrentlyActive()) {
+            window.rerollCurrentQuestionForCurrentBoss();
         }
     }
 

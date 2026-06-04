@@ -93,11 +93,11 @@ function hideTwoWrongAnswersForCurrentQuestion() {
         return false;
     }
 
-    const answerBoxes = currentQuizContainer.querySelectorAll(".quiz-answer-box");
-    const wrongAnswerBoxes = [];
+    let answerBoxes = currentQuizContainer.querySelectorAll(".quiz-answer-box");
+    let wrongAnswerBoxes = [];
 
     for (let i = 0; i < answerBoxes.length; i++) {
-        const answerIndex = Number(answerBoxes[i].dataset.answerIndex);
+        let answerIndex = Number(answerBoxes[i].dataset.answerIndex);
 
         if (answerIndex != currentRenderedQuestion.richtigeAntwort) {
             wrongAnswerBoxes.push(answerBoxes[i]);
