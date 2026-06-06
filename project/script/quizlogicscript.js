@@ -1,9 +1,30 @@
+const correctAnswerSound = document.getElementById("correct-answer-sound");
+const wrongAnswerSound = document.getElementById("wrong-answer-sound");
+
 const questionPlan = ["leicht", "leicht", "mittel", "mittel", "schwer", "schwer"];
 
 let currentBossData = null;
 let currentQuestionPlanIndex = 0;
 let usedQuestionIdsForCurrentBoss = [];
 let answerCooldown = false;
+
+function playCorrectAnswerSound() {
+    if (!correctAnswerSound) {
+        return;
+    }
+
+    correctAnswerSound.currentTime = 0;
+    correctAnswerSound.play().catch(function () {});
+}
+
+function playWrongAnswerSound() {
+    if (!wrongAnswerSound) {
+        return;
+    }
+
+    wrongAnswerSound.currentTime = 0;
+    wrongAnswerSound.play().catch(function () {});
+}
 
 function getPointsForCorrectAnswer(schwierigkeit) {
     if (schwierigkeit == "leicht") {
@@ -116,6 +137,7 @@ function loadNextQuestionOrFinishBoss() {
 
 function handleCorrectAnswer(answerBox) {
     answerBox.classList.add("quiz-answer-box-correct");
+    playCorrectAnswerSound();
 
     window.currentPoints += getPointsForCorrectAnswer(currentRenderedQuestion.schwierigkeit);
     updateHudPoints();
@@ -131,6 +153,7 @@ function handleCorrectAnswer(answerBox) {
 
 function handleWrongAnswer(answerBox) {
     answerBox.classList.add("quiz-answer-box-wrong");
+    playWrongAnswerSound();
 
     window.currentPoints -= getPointsLossForWrongAnswer(currentRenderedQuestion.schwierigkeit);
 
@@ -199,9 +222,9 @@ function rerollCurrentQuestionForCurrentBoss() {
         return false;
     }
 
-    let currentDifficulty = currentRenderedQuestion.schwierigkeit;
+    const currentDifficulty = currentRenderedQuestion.schwierigkeit;
 
-    let rerolledQuestion = renderQuestionForBossAndDifficulty(
+    const rerolledQuestion = renderQuestionForBossAndDifficulty(
         currentBossData,
         currentDifficulty,
         usedQuestionIdsForCurrentBoss

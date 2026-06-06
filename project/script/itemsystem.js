@@ -281,6 +281,8 @@ function claimNextReward() {
     const claimedRewardKey = pendingRewardsQueue.shift();
     window.itemInventory[claimedRewardKey]++;
 
+    playPickupSound();
+
     updateInteractionBoxLabels();
     renderRewardsPopup();
     renderItemsPopup();

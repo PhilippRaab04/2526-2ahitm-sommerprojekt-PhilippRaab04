@@ -1,42 +1,36 @@
 const leaderboardKey = "quizDungeonLeaderboard";
 
-const backgroundMusic = document.getElementById("background-music");
-const victorySound = document.getElementById("victory-sound");
-const defeatSound = document.getElementById("defeat-sound");
+const endVictorySound = document.getElementById("victory-sound");
+const endDefeatSound = document.getElementById("defeat-sound");
 
-function stopAllGameAudio() {
-    if (backgroundMusic) {
-        backgroundMusic.pause();
-        backgroundMusic.currentTime = 0;
+function stopEndSounds() {
+    if (endVictorySound) {
+        endVictorySound.pause();
+        endVictorySound.currentTime = 0;
     }
 
-    if (victorySound) {
-        victorySound.pause();
-        victorySound.currentTime = 0;
-    }
-
-    if (defeatSound) {
-        defeatSound.pause();
-        defeatSound.currentTime = 0;
+    if (endDefeatSound) {
+        endDefeatSound.pause();
+        endDefeatSound.currentTime = 0;
     }
 }
 
 function playVictorySound() {
-    if (!victorySound) {
+    if (!endVictorySound) {
         return;
     }
 
-    stopAllGameAudio();
-    victorySound.play().catch(function () {});
+    stopEndSounds();
+    endVictorySound.play().catch(function () {});
 }
 
 function playDefeatSound() {
-    if (!defeatSound) {
+    if (!endDefeatSound) {
         return;
     }
 
-    stopAllGameAudio();
-    defeatSound.play().catch(function () {});
+    stopEndSounds();
+    endDefeatSound.play().catch(function () {});
 }
 
 function saveToLeaderboard() {
@@ -68,6 +62,15 @@ function saveToLeaderboard() {
     }
 
     leaderboardData.push(newEntry);
+
+    leaderboardData.sort(function (a, b) {
+        return b.points - a.points;
+    });
+
+    if (leaderboardData.length > 5) {
+        leaderboardData = leaderboardData.slice(0, 5);
+    }
+
     localStorage.setItem(leaderboardKey, JSON.stringify(leaderboardData));
 }
 
